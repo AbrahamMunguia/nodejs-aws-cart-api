@@ -12,7 +12,7 @@ lerna-debug.log*
 infra/node_modules
 # OS
 .DS_Store
-
+infra/cdk.out
 # Tests
 /coverage
 /.nyc_output

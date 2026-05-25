@@ -8,6 +8,22 @@
       ]
     }
   ],
+  "/CartApiStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-singleton",
+      "data": true
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+      "data": 2
+    }
+  ],
   "/CartApiStack/ApiUrl": [
     {
       "type": "aws:cdk:logicalId",
@@ -16,7 +32,35 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:222:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:277:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/HealthEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HealthEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:283:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:289:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -30,7 +74,21 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:295:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/DeploymentBucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeploymentBucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:301:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -44,7 +102,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:234:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:307:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -58,7 +116,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:240:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:313:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -90,6 +148,53 @@
       ]
     }
   ],
+  "/CartApiStack/CartApiDeploymentBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDeploymentBucket828E04DC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:24:30)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/CartApiStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
   "/CartApiStack/CartApiVpc/Resource": [
     {
       "type": "aws:cdk:logicalId",
@@ -99,7 +204,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -114,7 +219,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -129,7 +234,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -144,7 +249,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new SecurityGroup2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:46:22)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:70:22)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -159,7 +264,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new SecurityGroup2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:53:19)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:77:19)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -174,7 +279,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...WrappedClass.<anonymous> in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:59:11)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:83:11)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -189,7 +294,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:74:24)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:98:24)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals..."
       ]
@@ -204,7 +309,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:74:24)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:98:24)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -219,7 +324,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new NodejsFunction in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:116:22)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:145:22)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -234,9 +339,23 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new NodejsFunction in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:116:22)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:145:22)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals..."
+      ]
+    }
+  ],
+  "/CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:216:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
       ]
     }
   ],
@@ -248,10 +367,10 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...new LambdaRestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:195:17)",
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
-        "...node internals, ts-node..."
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ],
@@ -263,10 +382,10 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...new LambdaRestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:195:17)",
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
-        "...node internals, ts-node..."
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ],
@@ -279,6 +398,40 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiDeploymentBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDeploymentBucketPolicyA55C1C53"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:24:30)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/CartApiStack/CartApiDeploymentBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDeploymentBucketAutoDeleteObjectsCustomResourceF8333CE9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
         "(no user code in 10 frames, use --stack-trace-limit to capture more)"
       ]
     }
@@ -336,7 +489,7 @@
         ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
         "Array.forEach (:)",
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -351,7 +504,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -366,7 +519,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -425,7 +578,7 @@
         ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
         "Array.forEach (:)",
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -482,7 +635,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals..."
       ]
@@ -539,7 +692,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Vpc2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:19:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:44:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals..."
       ]
@@ -638,7 +791,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:74:24)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:98:24)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -653,7 +806,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:74:24)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:98:24)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
       ]
     }
@@ -667,7 +820,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new NodejsFunction in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:116:22)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:145:22)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -682,7 +835,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new NodejsFunction in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:116:22)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:145:22)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -697,21 +850,65 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new NodejsFunction in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:116:22)"
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:145:22)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiS3Deployment/AwsCliLayer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiS3DeploymentAwsCliLayer6C0501C1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:216:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiS3Deployment/CustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiS3DeploymentCustomResourceA7164083"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:216:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
       ]
     }
   ],
   "/CartApiStack/CartApiGateway/Deployment/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayDeploymentDA5AA1A7efd2a1776538bdd7b1db523b33d734a0"
+      "data": "CartApiGatewayDeploymentDA5AA1A78df3cfa5521fa1222af2dae638654dbb"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...new LambdaRestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:195:17)",
-        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
       ]
     }
   ],
@@ -723,9 +920,10 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...new LambdaRestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:195:17)",
-        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
       ]
     }
   ],
@@ -738,7 +936,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:74:24)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:98:24)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
         "...node internals, ts-node..."
       ]
@@ -752,9 +950,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...WrappedClass.grantRead in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:187:24)",
-        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
       ]
     }
   ],
@@ -762,6 +959,19 @@
     {
       "type": "aws:cdk:logicalId",
       "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -779,114 +989,230 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:228:17)"
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/{proxy+}/Resource": [
+  "/CartApiStack/CartApiGateway/Default/health/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayproxy16B32D76"
+      "data": "CartApiGatewayhealth19323845"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...new LambdaRestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:195:17)",
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:255:37)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
-        "...node internals..."
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..": [
+  "/CartApiStack/CartApiGateway/Default/api/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYCCB6E672"
+      "data": "CartApiGatewayapiA72C3E33"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:262:34)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..": [
+  "/CartApiStack/CartApiGateway/Default/health/OPTIONS/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANY9F70E6A9"
+      "data": "CartApiGatewayhealthOPTIONS7C933EB5"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:255:37)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/ANY/Resource": [
+  "/CartApiStack/CartApiGateway/Default/health/GET/ApiPermission.CartApiStackCartApiGateway05BB8C40.GET..health": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayANY00052314"
+      "data": "CartApiGatewayhealthGETApiPermissionCartApiStackCartApiGateway05BB8C40GEThealth7F62BFA1"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:256:20)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/{proxy+}/OPTIONS/Resource": [
+  "/CartApiStack/CartApiGateway/Default/health/GET/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.GET..health": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayproxyOPTIONS8CCA1A7C"
+      "data": "CartApiGatewayhealthGETApiPermissionTestCartApiStackCartApiGateway05BB8C40GEThealth13333B20"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:256:20)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}": [
+  "/CartApiStack/CartApiGateway/Default/health/GET/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayproxyANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYproxy94D9EADB"
+      "data": "CartApiGatewayhealthGET97ECD2D1"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:256:20)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}": [
+  "/CartApiStack/CartApiGateway/Default/api/OPTIONS/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayproxyANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYproxyD7ED7614"
+      "data": "CartApiGatewayapiOPTIONS847CD04E"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:262:34)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
       ]
     }
   ],
-  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/Resource": [
+  "/CartApiStack/CartApiGateway/Default/api/{proxy+}/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "CartApiGatewayproxyANY4FE24435"
+      "data": "CartApiGatewayapiproxy1B4B7AF3"
     },
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+        "...WrappedClass.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:263:39)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..api": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYapiB338A609"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:271:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..api": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYapi87A3F4C0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:271:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/ANY/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiANY77D1235A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:271:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/{proxy+}/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiproxyOPTIONSDAC0F2A0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:263:39)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..api.{proxy+}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiproxyANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYapiproxy7B5FA956"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:269:19)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..api.{proxy+}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiproxyANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYapiproxyD1E80B3F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:269:19)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayapiproxyANY888E02E0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:269:19)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:12:1)",
+        "...node internals, ts-node, ts-node..."
       ]
     }
   ]

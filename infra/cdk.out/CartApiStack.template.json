@@ -1,5 +1,199 @@
 {
  "Resources": {
+  "CartApiDeploymentBucket828E04DC": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "BucketName": "cart-api-deployment-346836576273-us-east-1",
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 1
+       },
+       "Id": "expire-old-deployment-zips",
+       "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 30
+       },
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "aws-cdk:cr-owned:nestjs-build/:83778a0b",
+      "Value": "true"
+     }
+    ],
+    "VersioningConfiguration": {
+     "Status": "Enabled"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiDeploymentBucket/Resource"
+   }
+  },
+  "CartApiDeploymentBucketPolicyA55C1C53": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "CartApiDeploymentBucket828E04DC"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:PutBucketPolicy"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "CartApiDeploymentBucket828E04DC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "CartApiDeploymentBucket828E04DC",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiDeploymentBucket/Policy/Resource"
+   }
+  },
+  "CartApiDeploymentBucketAutoDeleteObjectsCustomResourceF8333CE9": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "CartApiDeploymentBucket828E04DC"
+    }
+   },
+   "DependsOn": [
+    "CartApiDeploymentBucketPolicyA55C1C53"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiDeploymentBucket/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
+     "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs22.x",
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Lambda function for auto-deleting objects in ",
+       {
+        "Ref": "CartApiDeploymentBucket828E04DC"
+       },
+       " S3 bucket."
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+    "aws:asset:property": "Code"
+   }
+  },
   "CartApiVpc84BDEB84": {
    "Type": "AWS::EC2::VPC",
    "Properties": {
@@ -665,7 +859,7 @@
     "DeleteAutomatedBackups": true,
     "DeletionProtection": false,
     "Engine": "postgres",
-    "EngineVersion": "16",
+    "EngineVersion": "16.3",
     "MasterUserPassword": {
      "Fn::Join": [
       "",
@@ -758,6 +952,36 @@
      "Statement": [
       {
        "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "CartApiDeploymentBucket828E04DC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "CartApiDeploymentBucket828E04DC",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue"
        ],
@@ -791,7 +1015,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
-     "S3Key": "f82ed64c4f2db671d97ddd349c75bb4dfcc92b92779c1662a223a5eb9b638415.zip"
+     "S3Key": "866bd936c7c48bc2782b28e6b7e806bf3cceba4ac1fe08bf1d040fbcc9cb3c1b.zip"
     },
     "Environment": {
      "Variables": {
@@ -811,6 +1035,9 @@
       "DB_NAME": "cartdb",
       "DB_SECRET_ARN": {
        "Ref": "CartApiDatabaseSecretAttachmentA6D0538C"
+      },
+      "S3_DEPLOYMENT_BUCKET": {
+       "Ref": "CartApiDeploymentBucket828E04DC"
       }
      }
     },
@@ -853,7 +1080,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "CartApiStack/CartApiLambda/Resource",
-    "aws:asset:path": "asset.f82ed64c4f2db671d97ddd349c75bb4dfcc92b92779c1662a223a5eb9b638415",
+    "aws:asset:path": "asset.866bd936c7c48bc2782b28e6b7e806bf3cceba4ac1fe08bf1d040fbcc9cb3c1b",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -979,6 +1206,192 @@
     "aws:asset:property": "Code"
    }
   },
+  "CartApiS3DeploymentAwsCliLayer6C0501C1": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
+     "S3Key": "e2659170a0721541efa761a8d5d04d5e36cbbf691c4b15a9053002b7c825055d.zip"
+    },
+    "Description": "/opt/awscli/aws"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiS3Deployment/AwsCliLayer/Resource",
+    "aws:asset:path": "asset.e2659170a0721541efa761a8d5d04d5e36cbbf691c4b15a9053002b7c825055d.zip",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "CartApiS3DeploymentCustomResourceA7164083": {
+   "Type": "Custom::CDKBucketDeployment",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+      "Arn"
+     ]
+    },
+    "SourceBucketNames": [
+     "cdk-hnb659fds-assets-346836576273-us-east-1"
+    ],
+    "SourceObjectKeys": [
+     "e850af7ae9b8bdf8911a7ca22b6cd456b3da523249a272b2ee2914f0487fe940.zip"
+    ],
+    "DestinationBucketName": {
+     "Ref": "CartApiDeploymentBucket828E04DC"
+    },
+    "DestinationBucketKeyPrefix": "nestjs-build/",
+    "WaitForDistributionInvalidation": true,
+    "RetainOnDelete": false,
+    "Prune": false,
+    "OutputObjectKeys": true
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiS3Deployment/CustomResource/Default"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:s3:::cdk-hnb659fds-assets-346836576273-us-east-1",
+        "arn:aws:s3:::cdk-hnb659fds-assets-346836576273-us-east-1/*"
+       ]
+      },
+      {
+       "Action": [
+        "s3:Abort*",
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "CartApiDeploymentBucket828E04DC",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "CartApiDeploymentBucket828E04DC",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "Roles": [
+     {
+      "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
+     "S3Key": "3423a042b818e31c1e34a19d6689ab2e5f9b70fcbe9e71df66f241b20a200bd9.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "AWS_CA_BUNDLE": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
+     }
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "CartApiS3DeploymentAwsCliLayer6C0501C1"
+     }
+    ],
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.13",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+    "aws:asset:path": "asset.3423a042b818e31c1e34a19d6689ab2e5f9b70fcbe9e71df66f241b20a200bd9",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
   "CartApiGateway41E6C4C4": {
    "Type": "AWS::ApiGateway::RestApi",
    "Properties": {
@@ -989,7 +1402,7 @@
     "aws:cdk:path": "CartApiStack/CartApiGateway/Resource"
    }
   },
-  "CartApiGatewayDeploymentDA5AA1A7efd2a1776538bdd7b1db523b33d734a0": {
+  "CartApiGatewayDeploymentDA5AA1A78df3cfa5521fa1222af2dae638654dbb": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "API Gateway for Cart API NestJS Lambda",
@@ -998,10 +1411,15 @@
     }
    },
    "DependsOn": [
-    "CartApiGatewayproxyANY4FE24435",
-    "CartApiGatewayproxyOPTIONS8CCA1A7C",
-    "CartApiGatewayproxy16B32D76",
-    "CartApiGatewayANY00052314",
+    "CartApiGatewayapiproxyANY888E02E0",
+    "CartApiGatewayapiproxyOPTIONSDAC0F2A0",
+    "CartApiGatewayapiproxy1B4B7AF3",
+    "CartApiGatewayapiANY77D1235A",
+    "CartApiGatewayapiOPTIONS847CD04E",
+    "CartApiGatewayapiA72C3E33",
+    "CartApiGatewayhealthGET97ECD2D1",
+    "CartApiGatewayhealthOPTIONS7C933EB5",
+    "CartApiGatewayhealth19323845",
     "CartApiGatewayOPTIONSE3F5F706"
    ],
    "Metadata": {
@@ -1013,12 +1431,13 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "CartApiGatewayDeploymentDA5AA1A7efd2a1776538bdd7b1db523b33d734a0"
+     "Ref": "CartApiGatewayDeploymentDA5AA1A78df3cfa5521fa1222af2dae638654dbb"
     },
     "MethodSettings": [
      {
       "DataTraceEnabled": false,
       "HttpMethod": "*",
+      "MetricsEnabled": true,
       "ResourcePath": "/*",
       "ThrottlingBurstLimit": 200,
       "ThrottlingRateLimit": 100
@@ -1079,7 +1498,7 @@
     "aws:cdk:path": "CartApiStack/CartApiGateway/Default/OPTIONS/Resource"
    }
   },
-  "CartApiGatewayproxy16B32D76": {
+  "CartApiGatewayhealth19323845": {
    "Type": "AWS::ApiGateway::Resource",
    "Properties": {
     "ParentId": {
@@ -1088,16 +1507,16 @@
       "RootResourceId"
      ]
     },
-    "PathPart": "{proxy+}",
+    "PathPart": "health",
     "RestApiId": {
      "Ref": "CartApiGateway41E6C4C4"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/{proxy+}/Resource"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/health/Resource"
    }
   },
-  "CartApiGatewayproxyOPTIONS8CCA1A7C": {
+  "CartApiGatewayhealthOPTIONS7C933EB5": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
     "ApiKeyRequired": false,
@@ -1130,17 +1549,17 @@
      }
     ],
     "ResourceId": {
-     "Ref": "CartApiGatewayproxy16B32D76"
+     "Ref": "CartApiGatewayhealth19323845"
     },
     "RestApiId": {
      "Ref": "CartApiGateway41E6C4C4"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/{proxy+}/OPTIONS/Resource"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/health/OPTIONS/Resource"
    }
   },
-  "CartApiGatewayproxyANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYproxy94D9EADB": {
+  "CartApiGatewayhealthGETApiPermissionCartApiStackCartApiGateway05BB8C40GEThealth7F62BFA1": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -1163,16 +1582,16 @@
        {
         "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
        },
-       "/*/*"
+       "/GET/health"
       ]
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/health/GET/ApiPermission.CartApiStackCartApiGateway05BB8C40.GET..health"
    }
   },
-  "CartApiGatewayproxyANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYproxyD7ED7614": {
+  "CartApiGatewayhealthGETApiPermissionTestCartApiStackCartApiGateway05BB8C40GEThealth13333B20": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -1191,20 +1610,20 @@
        {
         "Ref": "CartApiGateway41E6C4C4"
        },
-       "/test-invoke-stage/*/*"
+       "/test-invoke-stage/GET/health"
       ]
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/health/GET/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.GET..health"
    }
   },
-  "CartApiGatewayproxyANY4FE24435": {
+  "CartApiGatewayhealthGET97ECD2D1": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
     "AuthorizationType": "NONE",
-    "HttpMethod": "ANY",
+    "HttpMethod": "GET",
     "Integration": {
      "IntegrationHttpMethod": "POST",
      "Type": "AWS_PROXY",
@@ -1225,118 +1644,329 @@
      }
     },
     "ResourceId": {
-     "Ref": "CartApiGatewayproxy16B32D76"
+     "Ref": "CartApiGatewayhealth19323845"
     },
     "RestApiId": {
      "Ref": "CartApiGateway41E6C4C4"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/{proxy+}/ANY/Resource"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/health/GET/Resource"
    }
   },
-  "CartApiGatewayANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYCCB6E672": {
-   "Type": "AWS::Lambda::Permission",
+  "CartApiGatewayapiA72C3E33": {
+   "Type": "AWS::ApiGateway::Resource",
    "Properties": {
-    "Action": "lambda:InvokeFunction",
-    "FunctionName": {
-     "Fn::GetAtt": [
-      "CartApiLambda8E3D9C7E",
-      "Arn"
-     ]
-    },
-    "Principal": "apigateway.amazonaws.com",
-    "SourceArn": {
-     "Fn::Join": [
-      "",
-      [
-       "arn:aws:execute-api:us-east-1:346836576273:",
-       {
-        "Ref": "CartApiGateway41E6C4C4"
-       },
-       "/",
-       {
-        "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
-       },
-       "/*/"
-      ]
-     ]
-    }
-   },
-   "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY.."
-   }
-  },
-  "CartApiGatewayANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANY9F70E6A9": {
-   "Type": "AWS::Lambda::Permission",
-   "Properties": {
-    "Action": "lambda:InvokeFunction",
-    "FunctionName": {
-     "Fn::GetAtt": [
-      "CartApiLambda8E3D9C7E",
-      "Arn"
-     ]
-    },
-    "Principal": "apigateway.amazonaws.com",
-    "SourceArn": {
-     "Fn::Join": [
-      "",
-      [
-       "arn:aws:execute-api:us-east-1:346836576273:",
-       {
-        "Ref": "CartApiGateway41E6C4C4"
-       },
-       "/test-invoke-stage/*/"
-      ]
-     ]
-    }
-   },
-   "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY.."
-   }
-  },
-  "CartApiGatewayANY00052314": {
-   "Type": "AWS::ApiGateway::Method",
-   "Properties": {
-    "AuthorizationType": "NONE",
-    "HttpMethod": "ANY",
-    "Integration": {
-     "IntegrationHttpMethod": "POST",
-     "Type": "AWS_PROXY",
-     "Uri": {
-      "Fn::Join": [
-       "",
-       [
-        "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/",
-        {
-         "Fn::GetAtt": [
-          "CartApiLambda8E3D9C7E",
-          "Arn"
-         ]
-        },
-        "/invocations"
-       ]
-      ]
-     }
-    },
-    "ResourceId": {
+    "ParentId": {
      "Fn::GetAtt": [
       "CartApiGateway41E6C4C4",
       "RootResourceId"
      ]
     },
+    "PathPart": "api",
     "RestApiId": {
      "Ref": "CartApiGateway41E6C4C4"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/ANY/Resource"
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/Resource"
+   }
+  },
+  "CartApiGatewayapiOPTIONS847CD04E": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "CartApiGatewayapiA72C3E33"
+    },
+    "RestApiId": {
+     "Ref": "CartApiGateway41E6C4C4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/OPTIONS/Resource"
+   }
+  },
+  "CartApiGatewayapiproxy1B4B7AF3": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "CartApiGatewayapiA72C3E33"
+    },
+    "PathPart": "{proxy+}",
+    "RestApiId": {
+     "Ref": "CartApiGateway41E6C4C4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/{proxy+}/Resource"
+   }
+  },
+  "CartApiGatewayapiproxyOPTIONSDAC0F2A0": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "CartApiGatewayapiproxy1B4B7AF3"
+    },
+    "RestApiId": {
+     "Ref": "CartApiGateway41E6C4C4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/{proxy+}/OPTIONS/Resource"
+   }
+  },
+  "CartApiGatewayapiproxyANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYapiproxy7B5FA956": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CartApiLambda8E3D9C7E",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:346836576273:",
+       {
+        "Ref": "CartApiGateway41E6C4C4"
+       },
+       "/",
+       {
+        "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
+       },
+       "/*/api/*"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..api.{proxy+}"
+   }
+  },
+  "CartApiGatewayapiproxyANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYapiproxyD1E80B3F": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CartApiLambda8E3D9C7E",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:346836576273:",
+       {
+        "Ref": "CartApiGateway41E6C4C4"
+       },
+       "/test-invoke-stage/*/api/*"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..api.{proxy+}"
+   }
+  },
+  "CartApiGatewayapiproxyANY888E02E0": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "ANY",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "CartApiLambda8E3D9C7E",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "CartApiGatewayapiproxy1B4B7AF3"
+    },
+    "RestApiId": {
+     "Ref": "CartApiGateway41E6C4C4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/{proxy+}/ANY/Resource"
+   }
+  },
+  "CartApiGatewayapiANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYapiB338A609": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CartApiLambda8E3D9C7E",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:346836576273:",
+       {
+        "Ref": "CartApiGateway41E6C4C4"
+       },
+       "/",
+       {
+        "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
+       },
+       "/*/api"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..api"
+   }
+  },
+  "CartApiGatewayapiANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYapi87A3F4C0": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CartApiLambda8E3D9C7E",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:346836576273:",
+       {
+        "Ref": "CartApiGateway41E6C4C4"
+       },
+       "/test-invoke-stage/*/api"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..api"
+   }
+  },
+  "CartApiGatewayapiANY77D1235A": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "ANY",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "CartApiLambda8E3D9C7E",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "CartApiGatewayapiA72C3E33"
+    },
+    "RestApiId": {
+     "Ref": "CartApiGateway41E6C4C4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CartApiStack/CartApiGateway/Default/api/ANY/Resource"
    }
   },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31SwU7jMBD9Fu6uFwpozy1lUSVgowRxrSbObHCb2JFnTLeK8u/IdppGHDjN8/ObpzdjL+Xy/re8voIjLVR1WDS6lH3BoA4CjrTrUS1l/94p8fDPvGcPIvNlo1XhS4McuAvKrWd8g7LBC3/hVkRWaWBtzSQO4HGbhfIK/ASMRziJzOlPYLwYbw2jMzgJUpLxtGIG9dGiYVGg8k7z6clZ38UMPxJbUzskGoSrSPYZOGiR0U3izfobtwGGEgi3hhiMQpEizhrmxFldoHJpjs363DkIiiy1YKBGJ/sULghTeQNXI8+GmwTfbwbRQFtWsDO2wj3J11j+eKPirjW0ss9tepRYM9toFbeY0CDodgdEyCRXoQi6lWuvDshrIBztY8TJNTSjazWRtmYQja1JPts6R0YTBdDpOj2Q7J+jQY7Eq07HGCPcYNfY03m82algqNMviiBHst4pjHFekD9sFS5HlDn7/3SWjPYRD8PUKeJgwU2beq4J+K/nzvMgwgLlnn59Lu/kzZ28udqT1gvnDesWZZ7qFwkAq1IwAwAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/5VSTW/bMAz9Lc1Z0dakw4Dd8rEVAbrWiItciiGgZdZVYkuBSCULDP/3QVISB8EwYCc+ko+PFKmRHH35Kj/fwYGGqtwOa13INmdQWwEHWrc0lu3Uqy2ymL2bhN7aQaN/azP4NrguC3way5gimagTz3aONTK+FBtUTIPul0ipzNZaHXvV5P+HdirIGRgbNNfSUyDsBKqRbFc7FVqsspnIfFFrlfvCpMf0aGk94ysUNfbxPjYhskoDa2su5AC+L7JgnoEfgfEAR5E5vQfGXnhhGJ3BCyFNcvImzKA+wugiR+Wd5uOjs34XZ/hnYGEqh0SdcCXJNgMHDTK6C3k+vYnNgaEAwoUhBqNQpBGvCq4DZ3aOyqV3zKfnyk5QjFIDBip0sk3DBWIyr+Aq5KvHXQi3mU7U0BQlrI0tcUPyOZof3qi4aw2NbJc2HSXa/ssk1Akar1sgQiY5CUaUuKvtMaiffsn8Eji3iyNfuszezRMc0a3QUfBzbaoa2faMa2qGrtEUiJ2obUXyyVZLZDSRADtdpdvKdonEk52Os59gP0rcae/lDFX6ehEskax3CsM3Fj+RP2wZkid0zp6UI+46MfPEtvlb8iaVObvXJbqoHpcWumpT9cqns9RhL2s4kKq1nBxoVuu4qiD+4nnnuRPhdHJDn/ajB3n/IO/vNqT10HnDukG5TPYPe9ejG2UEAAA="
    },
    "Metadata": {
     "aws:cdk:path": "CartApiStack/CDKMetadata/Default"
@@ -1367,7 +1997,7 @@
    }
   },
   "ApiUrl": {
-   "Description": "Cart API Gateway endpoint URL",
+   "Description": "Base API Gateway URL  (append \"api/<route>\" for NestJS routes)",
    "Value": {
     "Fn::Join": [
      "",
@@ -1392,6 +2022,58 @@
     "Name": "CartApiUrl"
    }
   },
+  "HealthEndpoint": {
+   "Description": "GET this URL to verify the Lambda is alive",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "CartApiGateway41E6C4C4"
+      },
+      ".execute-api.us-east-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
+      },
+      "/health"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "CartApiHealthEndpoint"
+   }
+  },
+  "CartEndpoint": {
+   "Description": "Cart endpoint (requires Authorization header)",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "CartApiGateway41E6C4C4"
+      },
+      ".execute-api.us-east-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "CartApiGatewayDeploymentStageprod26C8C7D6"
+      },
+      "/api/profile/cart"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "CartApiCartEndpoint"
+   }
+  },
   "LambdaFunctionName": {
    "Description": "Lambda function name",
    "Value": {
@@ -1401,8 +2083,17 @@
     "Name": "CartApiLambdaName"
    }
   },
+  "DeploymentBucketName": {
+   "Description": "S3 bucket holding versioned NestJS deployment artifacts",
+   "Value": {
+    "Ref": "CartApiDeploymentBucket828E04DC"
+   },
+   "Export": {
+    "Name": "CartApiDeploymentBucket"
+   }
+  },
   "DbEndpoint": {
-   "Description": "RDS PostgreSQL endpoint",
+   "Description": "RDS PostgreSQL endpoint hostname",
    "Value": {
     "Fn::GetAtt": [
      "CartApiDatabase7E65066D",
@@ -1414,7 +2105,7 @@
    }
   },
   "DbSecretArn": {
-   "Description": "ARN of the RDS credentials secret in Secrets Manager",
+   "Description": "Secrets Manager ARN for DB credentials",
    "Value": {
     "Ref": "CartApiDatabaseSecretAttachmentA6D0538C"
    },
