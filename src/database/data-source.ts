@@ -1,27 +1,29 @@
-/**
- * Standalone DataSource used by the TypeORM CLI for generating and running
- * migrations outside of NestJS (e.g. in CI or a one-off Lambda invocation).
- *
- *   npm run migration:generate -- src/migrations/InitSchema
- *   npm run migration:run
- */
-import { DataSource } from 'typeorm';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Cart } from '../cart/entities/cart.entity';
 import { CartItem } from '../cart/entities/cart-item.entity';
-import * as dotenv from 'dotenv';
 
-dotenv.config();
-
-export const AppDataSource = new DataSource({
-  type: 'postgres',
-  host:     process.env.DB_HOST     ?? 'localhost',
-  port:     parseInt(process.env.DB_PORT ?? '5432', 10),
-  username: process.env.DB_USERNAME ?? 'postgres',
-  password: process.env.DB_PASSWORD ?? 'postgres',
-  database: process.env.DB_NAME     ?? 'cartapi',
-  entities: [Cart, CartItem],
-  migrations: ['src/migrations/**/*.ts'],
-  synchronize: false,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-  logging: true,
-});
+@Module({
+  imports: [
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        type: 'postgres',
+        host: config.get<string>('DB_HOST', 'localhost'),
+        port: config.get<number>('DB_PORT', 5432),
+        database: config.get<string>('DB_NAME', 'cartapi'),
+        username: config.get<string>('DB_USERNAME', 'postgres'),
+        password: config.get<string>('DB_PASSWORD', 'postgres'),
+        entities: [Cart, CartItem],
+        synchronize: false,
+        ssl: config.get<string>('NODE_ENV') === 'production'
+          ? { rejectUnauthorized: false }
+          : false,
+        logging: false,
+      }),
+    }),
+  ],
+})
+export class DatabaseModule { }

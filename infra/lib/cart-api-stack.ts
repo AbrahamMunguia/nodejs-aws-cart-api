@@ -92,7 +92,10 @@ export class CartApiStack extends cdk.Stack {
       vpcSubnets: { subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS },
       securityGroups: [lambdaSg],
       bundling: {
-        forceDockerBundling: false,          // use local esbuild, never Docker
+        forceDockerBundling: false,
+        // Inject reflect-metadata at the top of the compiled bundle.
+        // esbuild does not guarantee import order so this is the only
+        // reliable way to ensure it runs before any decorator code.
         externalModules: [
           '@nestjs/microservices',
           '@nestjs/websockets',
@@ -111,6 +114,7 @@ export class CartApiStack extends cdk.Stack {
         DB_NAME: 'cartapi',
         DB_USERNAME: dbSecret.secretValueFromJson('username').unsafeUnwrap(),
         DB_PASSWORD: dbSecret.secretValueFromJson('password').unsafeUnwrap(),
+        // Basic-auth credentials – override these via SSM/Secrets in production
         AUTH_USERNAME: 'AbrahamMunguia',
         AUTH_PASSWORD: 'Test1237',
       },
