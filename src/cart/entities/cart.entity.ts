@@ -9,7 +9,7 @@ import {
 import { CartItem } from './cart-item.entity';
 
 export enum CartStatus {
-  OPEN    = 'OPEN',
+  OPEN = 'OPEN',
   ORDERED = 'ORDERED',
 }
 
@@ -22,7 +22,7 @@ export class Cart {
    * Not a foreign key – there is no User table in this service.
    * The user_id comes from the JWT / auth layer.
    */
-  @Column({ name: 'user_id', nullable: false })
+  @Column({ name: 'user_id', type: 'varchar', nullable: false })
   userId: string;
 
   @Column({

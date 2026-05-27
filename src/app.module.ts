@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import { CartModule } from './cart/cart.module';
+import { AuthModule } from './auth/auth.module';
 // Keep any existing modules from the original repo (auth, users, orders…)
 // import { AuthModule }  from './auth/auth.module';
-// import { UsersModule } from './users/users.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -12,8 +13,8 @@ import { CartModule } from './cart/cart.module';
     ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     CartModule,
-    // AuthModule,
-    // UsersModule,
+    AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule { }

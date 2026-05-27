@@ -1,8 +1,10 @@
 /**
- * Lambda entry point.
- * Wraps the NestJS application in serverless-express so API Gateway
- * events are forwarded to Express / NestJS routing unchanged.
+ * reflect-metadata MUST be the first import in the entire bundle.
+ * TypeORM's decorator metadata (column types, relations) depends on it.
+ * esbuild does not guarantee import order so we force it here at the top.
  */
+import 'reflect-metadata';
+
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
