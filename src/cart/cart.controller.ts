@@ -3,7 +3,9 @@ import {
   Body, Req, UseGuards, HttpCode, HttpStatus, Inject,
 } from '@nestjs/common';
 import { CartService } from './cart.service';
+import { OrderService } from '../order/order.service';
 import { UpdateCartDto } from './dto/update-cart.dto';
+import { CheckoutDto } from '../order/dto/checkout.dto';
 import { BasicAuthGuard } from '../auth/guards/bacis-auth.guard';
 
 @Controller('profile/cart')
@@ -11,6 +13,7 @@ import { BasicAuthGuard } from '../auth/guards/bacis-auth.guard';
 export class CartController {
   constructor(
     @Inject(CartService) private readonly cartService: CartService,
+    @Inject(OrderService) private readonly orderService: OrderService,
   ) { }
 
   @Get()
@@ -32,8 +35,12 @@ export class CartController {
   }
 
   @Post('checkout')
-  async checkout(@Req() req: any) {
-    const cart = await this.cartService.checkout(req.user?.id);
-    return { statusCode: HttpStatus.OK, message: 'OK', data: { cart } };
+  async checkout(@Req() req: any, @Body() dto: CheckoutDto) {
+    const order = await this.orderService.checkout(req.user?.id, dto);
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'OK',
+      data: { order },
+    };
   }
 }

@@ -786,7 +786,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
-     "S3Key": "befcf4da53ca81f7487abc69f88917f6141a01f0f47d21b0594abb5d8f1dc5a6.zip"
+     "S3Key": "84660545703f2cb7d3d5ada989ca58a95bc3739ffb2f6b43e6f7aa360910d6cb.zip"
     },
     "Environment": {
      "Variables": {
@@ -827,7 +827,9 @@
          ":SecretString:password::}}"
         ]
        ]
-      }
+      },
+      "AUTH_USERNAME": "AbrahamMunguia",
+      "AUTH_PASSWORD": "Test1237"
      }
     },
     "Handler": "index.handler",
@@ -869,7 +871,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "CartApiStack/CartApiLambda/Resource",
-    "aws:asset:path": "asset.befcf4da53ca81f7487abc69f88917f6141a01f0f47d21b0594abb5d8f1dc5a6",
+    "aws:asset:path": "asset.84660545703f2cb7d3d5ada989ca58a95bc3739ffb2f6b43e6f7aa360910d6cb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }

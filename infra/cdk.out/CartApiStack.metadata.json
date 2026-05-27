@@ -16,7 +16,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:141:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:147:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -30,7 +30,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:142:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:148:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -44,7 +44,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:143:5)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:149:5)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -235,7 +235,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -250,7 +250,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -265,7 +265,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -684,7 +684,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -699,7 +699,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -714,7 +714,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -729,7 +729,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...WrappedClass.grantRead in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:118:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:124:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)"
       ]
     }
@@ -743,7 +743,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new RestApi2 in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)"
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:127:17)"
       ]
     }
   ],
@@ -756,7 +756,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...RootResource.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:143:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -771,7 +771,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...RootResource.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:143:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -786,7 +786,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...RootResource.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:143:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -801,7 +801,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...RootResource.addResource in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:144:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -816,7 +816,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...RootResource.addResource in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:14)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:144:14)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)"
       ]
     }
@@ -830,7 +830,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...WrappedClass.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:144:38)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -845,7 +845,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...WrappedClass.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:144:38)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node..."
       ]
@@ -860,7 +860,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...WrappedClass.addMethod in aws-cdk-lib...",
-        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:144:38)",
         "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
         "...node internals, ts-node, ts-node..."
       ]

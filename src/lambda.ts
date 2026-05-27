@@ -53,6 +53,32 @@ async function ensureSchema(dataSource: DataSource): Promise<void> {
       );
     `);
 
+    // order_status enum + orders table
+    await runner.query(`
+      DO $$ BEGIN
+        CREATE TYPE order_status AS ENUM ('OPEN', 'CONFIRMED', 'SENT', 'COMPLETED');
+      EXCEPTION WHEN duplicate_object THEN NULL;
+      END $$;
+    `);
+
+    await runner.query(`
+      CREATE TABLE IF NOT EXISTS orders (
+        id         UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
+        user_id    VARCHAR      NOT NULL,
+        cart_id    UUID         NOT NULL,
+        status     order_status NOT NULL DEFAULT 'OPEN',
+        items      JSONB        NOT NULL DEFAULT '[]',
+        delivery   JSONB,
+        total      NUMERIC(10,2),
+        created_at TIMESTAMP    NOT NULL DEFAULT now(),
+        updated_at TIMESTAMP    NOT NULL DEFAULT now()
+      );
+    `);
+
+    await runner.query(`
+      CREATE INDEX IF NOT EXISTS idx_orders_user_id ON orders (user_id);
+    `);
+
     await runner.commitTransaction();
     console.log('[bootstrap] schema ready');
   } catch (err) {

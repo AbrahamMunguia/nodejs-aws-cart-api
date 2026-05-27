@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Cart } from '../cart/entities/cart.entity';
 import { CartItem } from '../cart/entities/cart-item.entity';
+import { Order } from '../order/entities/order.entity';
 
 @Module({
   imports: [
@@ -16,14 +17,12 @@ import { CartItem } from '../cart/entities/cart-item.entity';
         database: config.get<string>('DB_NAME', 'cartapi'),
         username: config.get<string>('DB_USERNAME', 'postgres'),
         password: config.get<string>('DB_PASSWORD', 'postgres'),
-        entities: [Cart, CartItem],
-        // Automatically create / sync tables on startup.
-        // Set to false in production and use migrations instead.
-        synchronize: config.get<string>('NODE_ENV') !== 'production',
+        entities: [Cart, CartItem, Order],
+        synchronize: false,
         ssl: config.get<string>('NODE_ENV') === 'production'
           ? { rejectUnauthorized: false }
           : false,
-        logging: config.get<string>('NODE_ENV') !== 'production',
+        logging: false,
       }),
     }),
   ],
