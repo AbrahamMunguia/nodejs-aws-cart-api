@@ -111,6 +111,8 @@ export class CartApiStack extends cdk.Stack {
         DB_NAME: 'cartapi',
         DB_USERNAME: dbSecret.secretValueFromJson('username').unsafeUnwrap(),
         DB_PASSWORD: dbSecret.secretValueFromJson('password').unsafeUnwrap(),
+        AUTH_USERNAME: 'AbrahamMunguia',
+        AUTH_PASSWORD: 'Test1237',
       },
     });
 
