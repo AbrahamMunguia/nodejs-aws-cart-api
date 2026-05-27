@@ -1,0 +1,869 @@
+{
+  "/CartApiStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/ApiUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ApiUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:141:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/DbEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:142:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/DbSecretArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbSecretArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:143:5)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpc84BDEB84"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcIGW44B0033D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcVPCGW32FE157F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/LambdaSG/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdaSG9DBFCFB7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:27:22)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/RdsSG/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RdsSG7A20FFA2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:33:19)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/RdsSG/from CartApiStackLambdaSGBD26A0BD:5432": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RdsSGfromCartApiStackLambdaSGBD26A0BD54323C29BD04"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:40:11)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiDbSecret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDbSecret3928240F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Secret2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:43:22)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiPG/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiPG80EC91A0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:53:24)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiDb/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDb090BE84E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:53:24)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiLambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiLambda8E3D9C7E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:84:27)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGateway41E6C4C4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Account": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayAccountFDAA00F7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Endpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayEndpoint46469811"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1Subnet1CBD1190"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1RouteTable582826F9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1RouteTableAssociationBC973D9B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1DefaultRoute7DCE6ADE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1EIPC71F211B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet1/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet1NATGateway8A1F731F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet2SubnetA610DF9B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet2RouteTableDA7D63E9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet2RouteTableAssociation121AE8C3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:257 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/publicSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcpublicSubnet2DefaultRouteE3F46889"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:197 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet1SubnetDD69FAF8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet1RouteTable9E698ECD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet1RouteTableAssociation8D0EBC69"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet1DefaultRouteF92E3958"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet2Subnet98AA7B33"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet2RouteTable77FFE92A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet2RouteTableAssociation5C71869D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:260 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/privateSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcprivateSubnet2DefaultRouteAB6DEE7C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:16:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet1Subnet559074B5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet1RouteTable5731FEED"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet1RouteTableAssociation2B53F60F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet2Subnet1D3A0C17"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet2RouteTable403C0E8B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiVpc/isolatedSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiVpcisolatedSubnet2RouteTableAssociation24AEA5BA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:262 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiDbSecret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDbSecretAttachmentCCE70829"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:53:24)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiDb/SubnetGroup/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiDbSubnetGroupF7F3C211"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:53:24)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiLambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiLambdaServiceRole3A94778E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:84:27)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/CloudWatchRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayCloudWatchRoleFF90F9F2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Deployment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayDeploymentDA5AA1A7dd37143e5b2bf79ece4c1884ef95b15d"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/DeploymentStage.prod/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayDeploymentStageprod26C8C7D6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiLambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiLambdaServiceRoleDefaultPolicy98FA1713"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantRead in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:118:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayOPTIONSE3F5F706"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:121:17)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYCCB6E672"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANY9F70E6A9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/ANY/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayANY00052314"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:137:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/{proxy+}/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayproxy16B32D76"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/{proxy+}/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayproxyOPTIONS8CCA1A7C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:14)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)"
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayproxyANYApiPermissionCartApiStackCartApiGateway05BB8C40ANYproxy94D9EADB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/ApiPermission.Test.CartApiStackCartApiGateway05BB8C40.ANY..{proxy+}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayproxyANYApiPermissionTestCartApiStackCartApiGateway05BB8C40ANYproxyD7ED7614"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/CartApiStack/CartApiGateway/Default/{proxy+}/ANY/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CartApiGatewayproxyANY4FE24435"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new CartApiStack (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/lib/cart-api-stack.ts:138:38)",
+        "<anonymous> (/Users/cesarmunguia/Documents/Projects/nodejs-aws-cart-api/infra/bin/cart-api.ts:8:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ]
+}

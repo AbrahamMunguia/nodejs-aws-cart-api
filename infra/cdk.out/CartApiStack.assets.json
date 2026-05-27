@@ -1,0 +1,36 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "0ef1b65bbb4b71f99b064ea49353bdaa8f1b3d4c0eb31113c56a5fed0f944d32": {
+      "displayName": "CartApiLambda/Code",
+      "source": {
+        "path": "asset.0ef1b65bbb4b71f99b064ea49353bdaa8f1b3d4c0eb31113c56a5fed0f944d32",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "346836576273-us-east-1-c15c8e2b": {
+          "bucketName": "cdk-hnb659fds-assets-346836576273-us-east-1",
+          "objectKey": "0ef1b65bbb4b71f99b064ea49353bdaa8f1b3d4c0eb31113c56a5fed0f944d32.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::346836576273:role/cdk-hnb659fds-file-publishing-role-346836576273-us-east-1"
+        }
+      }
+    },
+    "9e91147bb02f1e1c3a030128d60db73127d72ce2cc13314ee1d50d43ddd05cbe": {
+      "displayName": "CartApiStack Template",
+      "source": {
+        "path": "CartApiStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "346836576273-us-east-1-9cf107a7": {
+          "bucketName": "cdk-hnb659fds-assets-346836576273-us-east-1",
+          "objectKey": "9e91147bb02f1e1c3a030128d60db73127d72ce2cc13314ee1d50d43ddd05cbe.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::346836576273:role/cdk-hnb659fds-file-publishing-role-346836576273-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
