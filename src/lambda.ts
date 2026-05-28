@@ -99,7 +99,12 @@ async function bootstrap(): Promise<Handler> {
   );
 
   app.setGlobalPrefix('api');
-  app.enableCors();
+  app.enableCors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: '*',
+    credentials: true,
+  });
   await app.init();
 
   // Run schema bootstrap after the app (and DataSource) are fully initialised

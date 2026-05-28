@@ -786,7 +786,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-346836576273-us-east-1",
-     "S3Key": "84660545703f2cb7d3d5ada989ca58a95bc3739ffb2f6b43e6f7aa360910d6cb.zip"
+     "S3Key": "c21159e3e73e2a566f6eab7de0713e8871db3c052856420a21e3a8f028ed1c5a.zip"
     },
     "Environment": {
      "Variables": {
@@ -871,7 +871,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "CartApiStack/CartApiLambda/Resource",
-    "aws:asset:path": "asset.84660545703f2cb7d3d5ada989ca58a95bc3739ffb2f6b43e6f7aa360910d6cb",
+    "aws:asset:path": "asset.c21159e3e73e2a566f6eab7de0713e8871db3c052856420a21e3a8f028ed1c5a",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
